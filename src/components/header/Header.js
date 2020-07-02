@@ -10,6 +10,7 @@ export default function Header() {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
+      textColor: "white"
     },
     icon: {
       margin: 7,
