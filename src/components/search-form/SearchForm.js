@@ -1,28 +1,21 @@
 import React from "react";
 
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
 
-export default function SearchForm() {
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+
+export default function SearchForm(props) {
   const useStyles = {
-    body: {
-      textAlign: "center",
-      padding: 10,
-      maxWidth: 300,
-    },
-    form: {
-      display: "inline-block",
-    },
     button: {
       margin: 3,
     },
   };
 
   return (
-    <div style={useStyles.body}>
-      <Form style={useStyles.form}>
-        <Form.Control type="text" />
-        <Button style={useStyles.button} variant="success">
+    <div>
+      <Form onSubmit={props.getRecipe}>
+        <Form.Control type="text" name="recipeName" />
+        <Button variant="success" type="submit" style={useStyles.button}>
           Search
         </Button>
       </Form>
