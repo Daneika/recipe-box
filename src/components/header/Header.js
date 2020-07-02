@@ -5,11 +5,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUtensils } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
+  const useStyles = {
+    navbar: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    icon: {
+      margin: 7,
+    },
+  };
   return (
     <div>
-      <Navbar className="header" expand="lg" variant="light" bg="success">
-        <FontAwesomeIcon icon={faUtensils} size="lg" />
-        <span>Recipe Box</span>
+      <Navbar style={useStyles.navbar} expand="lg" variant="light" bg="success">
+        <h3>Recipe Box</h3>
+        <FontAwesomeIcon style={useStyles.icon} icon={faUtensils} size="lg" />
       </Navbar>
     </div>
   );
