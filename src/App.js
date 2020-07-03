@@ -2,6 +2,9 @@ import React from "react";
 import { useState } from "react";
 
 import "./App.css";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 import Header from "./components/header";
 import SearchForm from "./components/search-form";
@@ -13,7 +16,7 @@ function App() {
       display: "flex",
       textAlign: "center",
       justifyContent: "center",
-      margin: 40,
+      marginTop: 30,
     },
   };
 
@@ -21,23 +24,37 @@ function App() {
     const recipeName = e.target.elements.recipeName.value;
     e.preventDefault();
     console.log(process.env);
-    const apiCall = await fetch(
-      `https://api.spoonacular.com/recipes/search?query=${recipeName}&number=3&apiKey=${process.env.REACT_APP_API_KEY}`
-    );
-    const data = await apiCall.json();
-
-    setRecipes(data.results);
+    try {
+      const apiCall = await fetch(
+        `https://api.spoonacular.com/recipes/search?query=${recipeName}&number=5&apiKey=${process.env.REACT_APP_API_KEY}`
+      );
+      const data = await apiCall.json();
+      console.log(data);
+      setRecipes(data.results);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   const [recipes, setRecipes] = useState([]);
-  console.log(recipes);
+  // console.log(recipes);
 
   return (
     <div>
       <Header />
-      <div style={useStyles.body}>
-        <SearchForm getRecipe={getRecipe} />
-        <Recipes recipes={recipes}/>
+      <div>
+        <Container fluid>
+          <Row style={useStyles.body}>
+            <Col md={{ span: 3 }}>
+              <SearchForm getRecipe={getRecipe} />
+            </Col>
+          </Row>
+          <Row style={useStyles.body}>
+            <Col>
+              <Recipes recipes={recipes} />
+            </Col>
+          </Row>
+        </Container>
       </div>
     </div>
   );
