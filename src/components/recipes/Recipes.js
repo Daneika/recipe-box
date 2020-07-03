@@ -15,10 +15,10 @@ export default function Recipes(props) {
         <Row>
           {props.recipes.map((recipe) => {
             return (
-              <Col key={recipe.title}>
-                <Card style={{ width: "18rem", height: "22rem" }}>
+              <Col xs={12} sm={6} md={4} lg={3} xl={2} style={{height: "30rem"}} key={recipe.title}>
+                <Card variant="top" style={{maxWidth:"20rem", minWidth:"12rem", height:"98%"}}>
                   <Card.Img
-                    src={`https://spoonacular.com/recipeImages/${recipe.id}-312x150.jpg`}
+                    src={`https://spoonacular.com/recipeImages/${recipe.id}-312x231.jpg`}
                   />
                   <Card.Body>
                     <OverlayTrigger
@@ -32,11 +32,12 @@ export default function Recipes(props) {
                           : `${recipe.title.substring(0, 25)}...`}
                       </Card.Title>
                     </OverlayTrigger>
-                    <Card.Text>
-                      {`Duration: ${recipe.readyInMinutes}mins`}
+                    <Card.Footer>
+                    {`Duration: ${recipe.readyInMinutes}mins`}
                       <div>{`Serves: ${recipe.servings}`}</div>
-                    </Card.Text>
-                    <Button variant="success">View Recipe</Button>
+                    <Button variant="success" style={{margin:"1rem"}}>View Recipe</Button>
+                    
+                    </Card.Footer>
                   </Card.Body>
                 </Card>
               </Col>

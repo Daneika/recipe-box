@@ -8,7 +8,7 @@ import Button from "react-bootstrap/Button";
 export default function SearchForm(props) {
   const useStyles = {
     button: {
-      margin: 3,
+      margin: 5,
     },
   };
 
