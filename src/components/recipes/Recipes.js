@@ -19,7 +19,7 @@ export default function Recipes(props) {
                     src={`https://spoonacular.com/recipeImages/${recipe.id}-312x150.jpg`}
                   />
                   <Card.Body>
-                    <Card.Title>{recipe.title}</Card.Title>
+                    <Card.Title>{recipe.title.length < 20 ? `${recipe.title}` : `${recipe.title.substring(0, 25)}...`}</Card.Title>
                     <Card.Text>
                       {`Duration: ${recipe.readyInMinutes}mins`}
                       <div>
