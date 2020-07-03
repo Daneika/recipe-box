@@ -35,7 +35,7 @@ export default function Recipes(props) {
                     <Card.Footer>
                     {`Duration: ${recipe.readyInMinutes}mins`}
                       <div>{`Serves: ${recipe.servings}`}</div>
-                    <Button variant="success" style={{margin:"1rem"}}>View Recipe</Button>
+                    <Button style={{margin:"1rem", backgroundColor:"#AECDD2", border:"white"}}>View Recipe</Button>
                     
                     </Card.Footer>
                   </Card.Body>

@@ -26,7 +26,7 @@ function App() {
     console.log(process.env);
     try {
       const apiCall = await fetch(
-        `https://api.spoonacular.com/recipes/search?query=${recipeName}&number=10&apiKey=${process.env.REACT_APP_API_KEY}`
+        `https://api.spoonacular.com/recipes/search?query=${recipeName}&number=12&apiKey=${process.env.REACT_APP_API_KEY}`
       );
       const data = await apiCall.json();
       console.log(data);

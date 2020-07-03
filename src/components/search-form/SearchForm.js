@@ -8,6 +8,8 @@ import Button from "react-bootstrap/Button";
 export default function SearchForm(props) {
   const useStyles = {
     button: {
+      backgroundColor:"#AECDD2",
+      border: "white",
       margin: 5,
     },
   };
@@ -18,7 +20,7 @@ export default function SearchForm(props) {
         <Form.Row >
           <Col>
             <Form.Control type="text" placeholder="Search for recipes..." name="recipeName" />
-            <Button variant="success" type="submit" style={useStyles.button}>
+            <Button type="submit" style={useStyles.button}>
               Search
             </Button>
           </Col>

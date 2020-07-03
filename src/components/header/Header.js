@@ -10,7 +10,8 @@ export default function Header() {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      textColor: "white"
+      backgroundColor:"#AECDD2",
+      color: "white"
     },
     icon: {
       margin: 7,
@@ -18,7 +19,7 @@ export default function Header() {
   };
   return (
     <div>
-      <Navbar style={useStyles.navbar} expand="lg" variant="light" bg="success">
+      <Navbar style={useStyles.navbar} expand="lg">
         <h3>Recipe Box</h3>
         <FontAwesomeIcon style={useStyles.icon} icon={faUtensils} size="lg" />
       </Navbar>
