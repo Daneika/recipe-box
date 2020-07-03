@@ -5,6 +5,7 @@ import "./App.css";
 
 import Header from "./components/header";
 import SearchForm from "./components/search-form";
+import Recipes from "./components/recipes";
 
 function App() {
   const useStyles = {
@@ -36,6 +37,7 @@ function App() {
       <Header />
       <div style={useStyles.body}>
         <SearchForm getRecipe={getRecipe} />
+        <Recipes recipes={recipes}/>
       </div>
     </div>
   );
