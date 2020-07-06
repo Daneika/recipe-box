@@ -43,7 +43,7 @@ export default function Recipes(props) {
                       <Card.Title>
                         {recipe.title.length < 20
                           ? `${recipe.title}`
-                          : `${recipe.title.substring(0, 25)}...`}
+                          : `${recipe.title.substring(0, 20)}...`}
                       </Card.Title>
                     </OverlayTrigger>
                     <Card.Footer>
