@@ -8,7 +8,15 @@ import Button from "react-bootstrap/Button";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 
+
+
 export default function Recipes(props) {
+  const createHandler = (recipe) => (e) => {
+    e.preventDefault();
+    console.log('The link was clicked.');
+    window.open(recipe.sourceUrl)
+  }
+
   return (
     <div>
       <Container fluid>
@@ -35,7 +43,7 @@ export default function Recipes(props) {
                     <Card.Footer>
                     {`Duration: ${recipe.readyInMinutes}mins`}
                       <div>{`Serves: ${recipe.servings}`}</div>
-                    <Button style={{margin:"1rem", backgroundColor:"#AECDD2", border:"white"}}>View Recipe</Button>
+                    <Button onClick={createHandler(recipe)} style={{margin:"1rem", backgroundColor:"#AECDD2", border:"white"}}>View Recipe</Button>
                     
                     </Card.Footer>
                   </Card.Body>
