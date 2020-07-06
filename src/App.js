@@ -41,20 +41,20 @@ function App() {
   // console.log(recipes);
 
   return (
-    <div >
+    <div>
       <Header />
-        <Container fluid>
-          <Row style={useStyles.form} >
-            <Col xs={{ span: 5 }} sm={{ span: 4 }} lg={{ span: 2 }}>
-              <SearchForm getRecipe={getRecipe} />
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <Recipes recipes={recipes} />
-            </Col>
-          </Row>
-        </Container>
+      <Container fluid>
+        <Row style={useStyles.form}>
+          <Col xs={{ span: 5 }} sm={{ span: 4 }} lg={{ span: 2 }}>
+            <SearchForm getRecipe={getRecipe} />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Recipes recipes={recipes} />
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }

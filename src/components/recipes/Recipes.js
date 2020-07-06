@@ -17,55 +17,55 @@ export default function Recipes(props) {
 
   return (
     <Container fluid>
-        <Row className="justify-content-center">
-          {props.recipes.map((recipe) => {
-            return (
-              <Col
-                xs={12}
-                sm={6}
-                md={"auto"}
-                style={{ height: "30rem", margin: 5 }}
-                key={recipe.id}
+      <Row className="justify-content-center">
+        {props.recipes.map((recipe) => {
+          return (
+            <Col
+              xs={12}
+              sm={6}
+              md={"auto"}
+              style={{ height: "30rem", margin: 5 }}
+              key={recipe.id}
+            >
+              <Card
+                variant="top"
+                style={{ maxWidth: "20rem", minWidth: "6rem", height: "96%" }}
               >
-                <Card
-                  variant="top"
-                  style={{ maxWidth: "20rem", minWidth: "6rem", height: "96%" }}
-                >
-                  <Card.Img
-                    src={`https://spoonacular.com/recipeImages/${recipe.id}-312x231.jpg`}
-                  />
-                  <Card.Body className="text-center">
-                    <OverlayTrigger
-                      key={recipe.title}
-                      placement="right"
-                      overlay={<Tooltip>{recipe.title}</Tooltip>}
+                <Card.Img
+                  src={`https://spoonacular.com/recipeImages/${recipe.id}-312x231.jpg`}
+                />
+                <Card.Body className="text-center">
+                  <OverlayTrigger
+                    key={recipe.title}
+                    placement="right"
+                    overlay={<Tooltip>{recipe.title}</Tooltip>}
+                  >
+                    <Card.Title>
+                      {recipe.title.length < 20
+                        ? `${recipe.title}`
+                        : `${recipe.title.substring(0, 20)}...`}
+                    </Card.Title>
+                  </OverlayTrigger>
+                  <Card.Footer>
+                    {`Duration: ${recipe.readyInMinutes}mins`}
+                    <div>{`Serves: ${recipe.servings}`}</div>
+                    <Button
+                      onClick={createHandler(recipe)}
+                      style={{
+                        margin: "1rem",
+                        backgroundColor: "#AECDD2",
+                        border: "white",
+                      }}
                     >
-                      <Card.Title>
-                        {recipe.title.length < 20
-                          ? `${recipe.title}`
-                          : `${recipe.title.substring(0, 20)}...`}
-                      </Card.Title>
-                    </OverlayTrigger>
-                    <Card.Footer>
-                      {`Duration: ${recipe.readyInMinutes}mins`}
-                      <div>{`Serves: ${recipe.servings}`}</div>
-                      <Button
-                        onClick={createHandler(recipe)}
-                        style={{
-                          margin: "1rem",
-                          backgroundColor: "#AECDD2",
-                          border: "white",
-                        }}
-                      >
-                        View Recipe
-                      </Button>
-                    </Card.Footer>
-                  </Card.Body>
-                </Card>
-              </Col>
-            );
-          })}
-        </Row>
+                      View Recipe
+                    </Button>
+                  </Card.Footer>
+                </Card.Body>
+              </Card>
+            </Col>
+          );
+        })}
+      </Row>
     </Container>
   );
 }
