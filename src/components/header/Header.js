@@ -14,14 +14,16 @@ export default function Header() {
       color: "white"
     },
     icon: {
-      margin: 7,
+      margin: 10,
+      fontSize: 30,
     },
   };
   return (
     <div>
       <Navbar style={useStyles.navbar} expand="lg">
-        <h3>Recipe Box</h3>
-        <FontAwesomeIcon style={useStyles.icon} icon={faUtensils} size="lg" />
+      <FontAwesomeIcon style={useStyles.icon} icon={faUtensils} size="lg" />
+        <h3> Recipe Box</h3>
+        
       </Navbar>
     </div>
   );
