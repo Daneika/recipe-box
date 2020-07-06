@@ -12,9 +12,10 @@ import Recipes from "./components/recipes";
 
 function App() {
   const useStyles = {
-    body: {
+    form: {
       display: "flex",
       textAlign: "center",
+      alignItems: "center",
       justifyContent: "center",
       marginTop: 30,
     },
@@ -26,7 +27,7 @@ function App() {
     console.log(process.env);
     try {
       const apiCall = await fetch(
-        `https://api.spoonacular.com/recipes/search?query=${recipeName}&number=12&apiKey=${process.env.REACT_APP_API_KEY}`
+        `https://api.spoonacular.com/recipes/search?query=${recipeName}&number=14&apiKey=${process.env.REACT_APP_API_KEY}`
       );
       const data = await apiCall.json();
       console.log(data);
@@ -40,22 +41,20 @@ function App() {
   // console.log(recipes);
 
   return (
-    <div>
+    <div >
       <Header />
-      <div>
         <Container fluid>
-          <Row style={useStyles.body}>
-            <Col md={{ span: 3 }}>
+          <Row style={useStyles.form} >
+            <Col xs={{ span: 5 }} sm={{ span: 4 }} lg={{ span: 2 }}>
               <SearchForm getRecipe={getRecipe} />
             </Col>
           </Row>
-          <Row style={useStyles.body}>
+          <Row>
             <Col>
               <Recipes recipes={recipes} />
             </Col>
           </Row>
         </Container>
-      </div>
     </div>
   );
 }

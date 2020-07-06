@@ -8,27 +8,33 @@ import Button from "react-bootstrap/Button";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 
-
-
 export default function Recipes(props) {
   const createHandler = (recipe) => (e) => {
     e.preventDefault();
-    console.log('The link was clicked.');
-    window.open(recipe.sourceUrl)
-  }
+    console.log("The link was clicked.");
+    window.open(recipe.sourceUrl);
+  };
 
   return (
-    <div>
-      <Container fluid>
-        <Row>
+    <Container fluid>
+        <Row className="justify-content-center">
           {props.recipes.map((recipe) => {
             return (
-              <Col xs={12} sm={6} md={4} lg={3} xl={2} style={{height: "30rem"}} key={recipe.title}>
-                <Card variant="top" style={{maxWidth:"20rem", minWidth:"12rem", height:"98%"}}>
+              <Col
+                xs={12}
+                sm={6}
+                md={"auto"}
+                style={{ height: "30rem", margin: 5 }}
+                key={recipe.id}
+              >
+                <Card
+                  variant="top"
+                  style={{ maxWidth: "20rem", minWidth: "6rem", height: "96%" }}
+                >
                   <Card.Img
                     src={`https://spoonacular.com/recipeImages/${recipe.id}-312x231.jpg`}
                   />
-                  <Card.Body>
+                  <Card.Body className="text-center">
                     <OverlayTrigger
                       key={recipe.title}
                       placement="right"
@@ -41,10 +47,18 @@ export default function Recipes(props) {
                       </Card.Title>
                     </OverlayTrigger>
                     <Card.Footer>
-                    {`Duration: ${recipe.readyInMinutes}mins`}
+                      {`Duration: ${recipe.readyInMinutes}mins`}
                       <div>{`Serves: ${recipe.servings}`}</div>
-                    <Button onClick={createHandler(recipe)} style={{margin:"1rem", backgroundColor:"#AECDD2", border:"white"}}>View Recipe</Button>
-                    
+                      <Button
+                        onClick={createHandler(recipe)}
+                        style={{
+                          margin: "1rem",
+                          backgroundColor: "#AECDD2",
+                          border: "white",
+                        }}
+                      >
+                        View Recipe
+                      </Button>
                     </Card.Footer>
                   </Card.Body>
                 </Card>
@@ -52,7 +66,6 @@ export default function Recipes(props) {
             );
           })}
         </Row>
-      </Container>
-    </div>
+    </Container>
   );
 }
