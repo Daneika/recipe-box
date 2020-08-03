@@ -29,7 +29,7 @@ export default function Recipes(props) {
             >
               <Card
                 variant="top"
-                style={{ maxWidth: "20rem", minWidth: "6rem", height: "96%" }}
+                style={{ maxWidth: "20rem", minWidth: "6rem", height: "96%", boxShadow:"5px 5px 8px #AECDD2"}}
               >
                 <Card.Img
                   src={`https://spoonacular.com/recipeImages/${recipe.id}-312x231.jpg`}
