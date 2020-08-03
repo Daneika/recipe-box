@@ -45,7 +45,7 @@ function App() {
       <Header />
       <Container fluid>
         <Row style={useStyles.form}>
-          <Col xs={{ span: 5 }} sm={{ span: 4 }} lg={{ span: 2 }}>
+          <Col xs={{ span: 6 }} sm={{ span: 6 }} md={{ span: 5 }} lg={{ span: 2 }}>
             <SearchForm getRecipe={getRecipe} />
           </Col>
         </Row>
