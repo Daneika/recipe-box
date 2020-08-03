@@ -12,15 +12,16 @@ export default function Header() {
       alignItems: "center",
       backgroundColor: "#AECDD2",
       color: "white",
+      height: "3em",
     },
     icon: {
       margin: 10,
-      fontSize: 30,
+      fontSize: "1.5em",
     },
   };
   return (
     <div>
-      <Navbar style={useStyles.navbar} expand="lg">
+      <Navbar style={useStyles.navbar}>
         <FontAwesomeIcon style={useStyles.icon} icon={faUtensils} size="lg" />
         <h3> Recipe Box</h3>
       </Navbar>
