@@ -27,7 +27,7 @@ function App() {
     console.log(process.env);
     try {
       const apiCall = await fetch(
-        `https://api.spoonacular.com/recipes/search?query=${recipeName}&number=14&apiKey=${process.env.REACT_APP_API_KEY}`
+        `https://api.spoonacular.com/recipes/search?query=${recipeName}&number=12&apiKey=${process.env.REACT_APP_API_KEY}`
       );
       const data = await apiCall.json();
       console.log(data);
@@ -45,7 +45,7 @@ function App() {
       <Header />
       <Container fluid>
         <Row style={useStyles.form}>
-          <Col xs={{ span: 6 }} sm={{ span: 6 }} md={{ span: 5 }} lg={{ span: 2 }}>
+          <Col xs={{ span: 7 }} sm={{ span: 6 }} md={{ span: 5 }} lg={{ span: 2 }}>
             <SearchForm getRecipe={getRecipe} />
           </Col>
         </Row>
