@@ -1,6 +1,7 @@
 import React from "react";
 
 import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUtensils } from "@fortawesome/free-solid-svg-icons";
 
@@ -15,15 +16,17 @@ export default function Header() {
       height: "3em",
     },
     icon: {
-      margin: 10,
-      fontSize: "1.5em",
+      fontSize: "1.8em",
     },
+    link: {
+      color: "inherit",
+    }
   };
   return (
     <div>
       <Navbar style={useStyles.navbar}>
         <FontAwesomeIcon style={useStyles.icon} icon={faUtensils} size="lg" />
-        <h3> Recipe Box</h3>
+        <Nav.Link style={useStyles.link} href="/"><h3>Recipe Box</h3></Nav.Link>
       </Navbar>
     </div>
   );
