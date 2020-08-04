@@ -9,24 +9,33 @@ export default function Header() {
   const useStyles = {
     navbar: {
       display: "flex",
-      justifyContent: "center",
+      justifyContent: "space-between",
       alignItems: "center",
       backgroundColor: "#AECDD2",
       color: "white",
       height: "3em",
     },
+    title: {
+      display: "inline",
+    },
     icon: {
       fontSize: "1.8em",
+      display: "inline",
     },
     link: {
       color: "inherit",
-    }
+    },
   };
   return (
     <div>
       <Navbar style={useStyles.navbar}>
-        <FontAwesomeIcon style={useStyles.icon} icon={faUtensils} size="lg" />
-        <Nav.Link style={useStyles.link} href="/"><h3>Recipe Box</h3></Nav.Link>
+        <Nav.Link style={useStyles.link} href="/">
+          <FontAwesomeIcon style={useStyles.icon} icon={faUtensils} size="lg" />
+          <h3 style={useStyles.title}> Recipe Box</h3>
+        </Nav.Link>
+        <Nav.Link href="https://github.com/Daneika/recipe-box">
+          <img src="/github-logo.png" alt="github logo"></img>
+        </Nav.Link>
       </Navbar>
     </div>
   );
