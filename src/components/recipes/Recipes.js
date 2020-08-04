@@ -37,7 +37,7 @@ export default function Recipes(props) {
                 <Card.Body className="text-center">
                   <OverlayTrigger
                     key={recipe.title}
-                    placement="right"
+                    placement="top"
                     overlay={<Tooltip>{recipe.title}</Tooltip>}
                   >
                     <Card.Title>
