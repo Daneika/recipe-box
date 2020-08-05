@@ -31,7 +31,7 @@ function App() {
       );
       const data = await apiCall.json();
       console.log(data);
-      setRecipes(data.results);
+      setRecipes(data.results.filter((recipe) => recipe.hasOwnProperty("image")));
     } catch (err) {
       console.error(err);
     }
@@ -45,7 +45,12 @@ function App() {
       <Header />
       <Container fluid>
         <Row style={useStyles.form}>
-          <Col xs={{ span: 7 }} sm={{ span: 6 }} md={{ span: 5 }} lg={{ span: 2 }}>
+          <Col
+            xs={{ span: 7 }}
+            sm={{ span: 6 }}
+            md={{ span: 5 }}
+            lg={{ span: 2 }}
+          >
             <SearchForm getRecipe={getRecipe} />
           </Col>
         </Row>
