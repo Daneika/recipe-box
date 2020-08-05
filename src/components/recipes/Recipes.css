@@ -1,8 +1,23 @@
+.card-layout {
+  height: 30rem;
+  margin: 5px;
+}
 .recipeCard {
-    transition: all 0.8s;
-    position: relative;
-  }
-  .recipeCard:hover {
-    transform: scale(1.1);
-    z-index: 2;
-  }
+  max-width: 275px;
+  min-width: 5px;
+  height: 95%;
+  box-shadow: 7px 7px 5px #aecdd2;
+  transition: all 0.4s;
+  position: relative;
+}
+
+.recipeCard:hover {
+  transform: scale(1.1);
+  z-index: 2;
+}
+
+.view-recipe {
+  margin: 1rem !important;
+  background-color: #aecdd2 !important;
+  border: white !important;
+}

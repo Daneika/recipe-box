@@ -26,13 +26,10 @@ export default function Recipes(props) {
               xs={12}
               sm={6}
               md={"auto"}
-              style={{ height: "30rem", margin: 5 }}
+              className="card-layout"
               key={recipe.id}
             >
-              <Card
-                variant="top"
-                className="recipeCard" style={{ maxWidth: "20rem", minWidth: "6rem", height: "96%", boxShadow:"5px 5px 8px #AECDD2"}}
-              >
+              <Card variant="top" className="recipeCard">
                 <Card.Img
                   src={`https://spoonacular.com/recipeImages/${recipe.id}-312x231.jpg`}
                 />
@@ -53,11 +50,7 @@ export default function Recipes(props) {
                     <div>{`Serves: ${recipe.servings}`}</div>
                     <Button
                       onClick={createHandler(recipe)}
-                      style={{
-                        margin: "1rem",
-                        backgroundColor: "#AECDD2",
-                        border: "white",
-                      }}
+                      className="view-recipe"
                     >
                       View Recipe
                     </Button>
