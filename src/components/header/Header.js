@@ -17,6 +17,8 @@ export default function Header() {
     },
     title: {
       display: "inline",
+      fontSize: "1.8em",
+      
     },
     icon: {
       fontSize: "1.8em",
@@ -31,7 +33,7 @@ export default function Header() {
       <Navbar style={useStyles.navbar}>
         <Nav.Link style={useStyles.link} href="/">
           <FontAwesomeIcon style={useStyles.icon} icon={faUtensils} size="lg" />
-          <h3 style={useStyles.title}> Recipe Box</h3>
+          <h4 style={useStyles.title}> Recipe Box</h4>
         </Nav.Link>
         <Nav.Link href="https://github.com/Daneika/recipe-box">
           <img src="/github-logo.png" alt="github logo"></img>
