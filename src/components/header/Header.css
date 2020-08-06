@@ -1,0 +1,21 @@
+.header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  background-color: #aecdd2 !important;
+  color: white !important;
+  height: 3em !important;
+}
+
+.title {
+  display: inline !important;
+  font-size: 1.6em !important;
+}
+.utensils-icon {
+  display: inline !important;
+  font-size: 1.6em !important;
+}
+
+.home-link {
+  color: white !important;
+}

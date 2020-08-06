@@ -5,35 +5,16 @@ import Nav from "react-bootstrap/Nav";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUtensils } from "@fortawesome/free-solid-svg-icons";
 
+import "./Header.css";
+
 export default function Header() {
-  const useStyles = {
-    navbar: {
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      backgroundColor: "#AECDD2",
-      color: "white",
-      height: "3em",
-    },
-    title: {
-      display: "inline",
-      fontSize: "1.6em",
-      
-    },
-    icon: {
-      display: "inline",
-      fontSize: "1.6em",
-    },
-    link: {
-      color: "inherit",
-    },
-  };
+ 
   return (
     <div>
-      <Navbar style={useStyles.navbar}>
-        <Nav.Link style={useStyles.link} href="/">
-          <FontAwesomeIcon style={useStyles.icon} icon={faUtensils} size="lg" />
-          <h3 style={useStyles.title}> Recipe Box </h3>
+      <Navbar className="header">
+        <Nav.Link className="home-link" href="/">
+          <FontAwesomeIcon className="utensils-icon" icon={faUtensils} size="lg" />
+          <h3 className="title"> Recipe Box </h3>
         </Nav.Link>
         <Nav.Link href="https://github.com/Daneika/recipe-box">
           <img src="/github-logo.png" alt="github logo"></img>
