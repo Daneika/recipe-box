@@ -8,12 +8,15 @@ import { faUtensils } from "@fortawesome/free-solid-svg-icons";
 import "./Header.css";
 
 export default function Header() {
- 
   return (
     <div>
       <Navbar className="header">
         <Nav.Link className="home-link" href="/">
-          <FontAwesomeIcon className="utensils-icon" icon={faUtensils} size="lg" />
+          <FontAwesomeIcon
+            className="utensils-icon"
+            icon={faUtensils}
+            size="lg"
+          />
           <h3 className="title"> Recipe Box </h3>
         </Nav.Link>
         <Nav.Link href="https://github.com/Daneika/recipe-box">

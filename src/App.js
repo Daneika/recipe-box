@@ -4,13 +4,13 @@ import { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+
+import "./App.css";
 import Header from "./components/header";
 import SearchForm from "./components/search-form";
 import Recipes from "./components/recipes";
 
-import "./App.css";
-
-function App() {
+export default function App() {
   const getRecipe = async (e) => {
     const recipeName = e.target.elements.recipeName.value;
     e.preventDefault();
@@ -55,4 +55,4 @@ function App() {
     </div>
   );
 }
-export default App;
+
